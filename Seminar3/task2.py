@@ -6,8 +6,8 @@
 
 from math import ceil
 
-# функция создания массива вводом из консоли
-def getArray(length):
+# функция создания массива c целочисленными элементами вводом из консоли
+def getIntArray(length):
     array = []
     for i in range(length):
         array.append(int(input(f"Введите {i}-й элемент массива целое число: ")))
@@ -21,5 +21,5 @@ def getArrCoupleElem(array):
         resArr.append(array[i] * array[len(array) - i - 1])
     return resArr
 
-arr = getArray(int(input("Введите длину массива: ")))
-print(f"\n{arr} => {getArrCoupleElem(arr)}\n")
+arr = getIntArray(int(input("Введите длину массива: ")))
+print(f"\n- {arr} => {getArrCoupleElem(arr)}\n")
