@@ -13,17 +13,12 @@ inputNumberTel = None
 def createMenu():
     global root
     global frm
-    global textSurname
     global inputSurname
     global inputName
     global inputPatronymic
     global inputBirthday
     global inputNumberTel
-    root = Tk()
-    root.title("Телефонный справочник")
-    root.iconbitmap(default="favicon.ico")
-    frm = ttk.Frame(root, padding=30)
-    frm.grid()
+    CreateForms("Телефонный справочник")
     ttk.Label(frm, text="Фамилия").grid(column=0, row=0)
     ttk.Label(frm, text="Имя").grid(column=1, row=0)
     ttk.Label(frm, text="Отчество").grid(column=2, row=0)
@@ -43,27 +38,27 @@ def createMenu():
     ttk.Button(frm, text="Поиск", command=SearchContact).grid(column=1, row=2)
     ttk.Button(frm, text="Показать все", command=PrintFromFile).grid(column=2, row=2)
     ttk.Button(frm, text="Экспорт в HTML", command=model.ExportHTML).grid(column=3, row=2)
-    ttk.Button(frm, text="Закрыть", command=root.destroy).grid(column=4, row=2)
     root.mainloop()
 
-# функция всплывающего окна сообщения
-def GetPopupWindow(message, title):
+# функция создает форму
+def CreateForms(title):
+    global root
+    global frm
     root = Tk()
     root.title(title)
     root.iconbitmap(default="favicon.ico")
     frm = ttk.Frame(root, padding=30)
     frm.grid()
+    ttk.Button(frm, text="Закрыть", command=root.destroy).grid(column=4, row=1000)
+    
+# функция всплывающего окна сообщения
+def GetPopupWindow(message, title):
+    CreateForms(title)
     ttk.Label(frm, text=message).grid(column=0, row=0)
-    ttk.Button(frm, text="Закрыть", command=root.destroy).grid(column=0, row=1)
 
 # функция вывода всего списка из файла
 def PrintFromFile():
-    root = Tk()
-    root.title("Телефонный справочник")
-    root.iconbitmap(default="favicon.ico")
-    frm = ttk.Frame(root, padding=30, borderwidth=1)
-    frm.grid()
-    ttk.Button(frm, text="Закрыть", command=root.destroy).grid(column=4, row=1000)
+    CreateForms("Телефонный справочник")
     data = open("contacts.txt", encoding="utf-8")
     contactEntry = data.readlines()
     for i in range(len(contactEntry)):
@@ -75,12 +70,7 @@ def PrintFromFile():
 
 # функция поиска 
 def SearchContact():
-    root = Tk()
-    root.title("Телефонный справочник")
-    root.iconbitmap(default="favicon.ico")
-    frm = ttk.Frame(root, padding=30)
-    frm.grid()
-    ttk.Button(frm, text="Закрыть", command=root.destroy).grid(column=4, row=1000)
+    CreateForms("Телефонный справочник")
     data = open("contacts.txt", encoding="utf-8")
     contactEntry = data.readlines()
     for i in range(len(contactEntry)):
