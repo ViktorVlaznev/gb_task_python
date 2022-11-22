@@ -50,7 +50,7 @@ def CreateForms(title):
     frm = ttk.Frame(root, padding=30)
     frm.grid()
     ttk.Button(frm, text="Закрыть", command=root.destroy).grid(column=4, row=1000)
-    
+
 # функция всплывающего окна сообщения
 def GetPopupWindow(message, title):
     CreateForms(title)
