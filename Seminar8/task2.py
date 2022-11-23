@@ -27,7 +27,7 @@ def GetCountSumRowandMain(matrix):
 
 matrixSize = int(input("Введите размер матрицы: "))
 minElement = int(input("Введите минимально возможное значение матрицы: "))
-maxElement = int(input("Введите ммаксимально возможное значение матрицы: "))
+maxElement = int(input("Введите максимально возможное значение матрицы: "))
 
 squareMatrix = CreatMatrix(matrixSize, minElement, maxElement)
 
