@@ -12,7 +12,7 @@ from telebot import types
 count = 0
 hidden_number = 0
 
-bot = telebot.TeleBot("", parse_mode=None)
+bot = telebot.TeleBot("5962288599:AAGnJjGywC70-BFOmcXnXt5U-D4PJBf2YBA", parse_mode=None)
 
 markup = types.ReplyKeyboardMarkup()
 itembtn1 = types.KeyboardButton('привет')
@@ -110,7 +110,7 @@ def FileRegister(link, mode, value, message):
 # функция записи в файл информации для тех поддержки 
 def RecordFileSupport(message):
     data = open('user_support.txt', 'a+', encoding='utf-8')
-    data.writelines(str(date.today()) + " " + str(message.from_user.id) + " " + message.text + " исполняется" + "\n")
+    data.writelines(str(date.today()) + " " + str(message.from_user.id) + " " + message.text + "\n")
     data.close()
     bot.reply_to(message, f"Спасибо за Ваше обращение! Вам ответят в ближайшее время.")
 
