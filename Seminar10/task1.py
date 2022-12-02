@@ -12,7 +12,7 @@ from telebot import types
 count = 0
 hidden_number = 0
 
-bot = telebot.TeleBot("5962288599:AAGnJjGywC70-BFOmcXnXt5U-D4PJBf2YBA", parse_mode=None)
+bot = telebot.TeleBot("", parse_mode=None)
 
 markup = types.ReplyKeyboardMarkup()
 itembtn1 = types.KeyboardButton('привет')
